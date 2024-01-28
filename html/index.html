@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='css/tailwind.css'>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="app.js" type="text/javascript"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <title>blombino-territories</title>
+    <style>
+        ::-webkit-scrollbar {
+    display: none;
+    }
+    </style>
+</head>
+<body class='flex h-screen w-screen items-start justify-center font-mono' x-init="listen()" x-data="main()" x-show.transition.200ms='show' style="font-family: 'Montserrat', sans-serif;">
+    <div class="mt-2 flex flex-col items-center justify-center transform -skew-x-6 h-20 bg-purple-600 px-3" style="box-shadow: 0px 0px 20px rgb(85, 196, 33);">
+        <div class="label font-RobotoMono text-2xl text-white">
+            <span x-text="label"></span>
+            <span class="text-sm" x-text="owner"></span>
+        </div>
+        <div class="progress font-RobotoMono h-6 text-white w-full bg-purple-300 overflow-hidden transition-all ease-in-out">
+            <div class="h-full bg-purple-400 text-center" :style='`width:${percent}%;`'>
+                <span class="text-sm"><span x-text="percent"></span>%</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
